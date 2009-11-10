@@ -1,6 +1,6 @@
 ---
 name: Form.Element.Resize
-version: 0.02
+version: 0.03
 author:
   - Edoardo Sabadelli <edoardo [at] sabadelli [dot] it>
 abstract: A nice unobtrusive javascript class for add a mouse-driven feature to form fields
