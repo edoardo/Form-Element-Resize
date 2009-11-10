@@ -1,0 +1,8 @@
+Revision history for JSAN Form.Element.Resize class
+
+0.02 Mon Feb  5 12:39:41 CET 2007
+- added 2 new options, `containerId' and `containerClass' useful for add apply some custom
+  CSS rules to the resizable element container
+
+0.01 Sun Jan 28 19:15:34 CET 2007
+- initial release

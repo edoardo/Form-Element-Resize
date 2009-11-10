@@ -3,14 +3,14 @@ NAME
     form field resizable with the mouse
 
 SYNOPSIS
-      <!-- XHTML page -->
-      <form action="http://host.domain.tld/cgi-bin/script">
-       <label for="message">Message:</label><br />
-       <textarea id="message" name="message"></textarea>
-      </form>
+     <!-- XHTML page -->
+     <form action="http://host.domain.tld/cgi-bin/script">
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message"></textarea>
+     </form>
 
-      // javascript code
-      new Form.Element.Resize({ elementId: 'message' });
+     // javascript code
+     new Form.Element.Resize({ elementId: 'message' });
 
 DESCRIPTION
     This nice class implement some methods for add a mouse-driven resize
@@ -41,13 +41,16 @@ METHODS
           Type of resize, shortcuts are auto, horizontal and vertical
           (default is auto).
 
-           - auto: resizable borders and corners are set automatically depending on the form element type.
-             text input and non-multiple select have only the right border draggable;
-             textarea and multple select have the right and bottom borders and the bottom-right corner draggable.
+          - auto: resizable borders and corners are set automatically
+          depending on the form element type. text input and non-multiple
+          select have only the right border draggable; textarea and multple
+          select have the right and bottom borders and the bottom-right
+          corner draggable.
 
-           - horizontal: all field types have only the right border draggable.
+          - horizontal: all field types have only the right border
+          draggable.
 
-           - vertical: all field types have only the bottom border draggable.
+          - vertical: all field types have only the bottom border draggable.
 
           It is also possible to specify each border/corner to activate by
           passing an object literal with one or more of the following keys:
@@ -57,37 +60,44 @@ METHODS
           All are initially disabled, so for example, to activate only the
           bottom-right corner the property must be initialized like this:
 
-          new Form.Element.Resize({ elementId: 'message', resizeType: { se:
-          1 } });
+           new Form.Element.Resize({ elementId: 'message', resizeType: { se: 1 } });
+
+       "containerId"
+          ID of the generated container element, useful for add some CSS
+          rules on it.
+
+       "containerClass"
+          Class of the generated container element, useful for add some CSS
+          rules on it.
 
 EXAMPLES
-      <!-- you can initialize the class within your XHTML page like this -->
-      <form action="http://host.domain.tld/cgi-bin/script">
-       <label for="message">Message:</label><br />
-       <textarea id="message" name="message"></textarea>
-       <script type="text/javascript">new Form.Element.Resize({ elementId: 'message' });</script>
-      </form>
+     <!-- you can initialize the class within your XHTML page like this -->
+     <form action="http://host.domain.tld/cgi-bin/script">
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message"></textarea>
+      <script type="text/javascript">new Form.Element.Resize({ elementId: 'message', containerClass: 'resizable' });</script>
+     </form>
 
-      // or in a more unobtrusive way put the new in an included javascript file.
-      // be sure to call the new when the page is loaded!
-      // a cross-browser way may be this
-      if( document.addEventListener )
-      {
-          document.addEventListener(
-            'load',
-            function() { new Form.Element.Resize({ elementId: 'message' }); },
-            false
-          );
+     // or in a more unobtrusive way put the new in an included javascript file.
+     // be sure to call the new when the page is loaded!
+     // a cross-browser way may be this
+     if( document.addEventListener )
+     {
+         document.addEventListener(
+           'load',
+           function() { new Form.Element.Resize({ elementId: 'message', containerClass: 'resizable' }); },
+           false
+         );
 
-          return true;
-      }
-      else if( document.attachEvent )
-      {
-          return document.attachEvent(
-            'onload',
-            function() { new Form.Element.Resize({ elementId: 'message' }); }
-          );
-      }
+         return true;
+     }
+     else if( document.attachEvent )
+     {
+         return document.attachEvent(
+           'onload',
+           function() { new Form.Element.Resize({ elementId: 'message', containerClass: 'resizable' }); }
+         );
+     }
 
 SEE ALSO
     Official web page at
