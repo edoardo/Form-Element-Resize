@@ -1,5 +1,8 @@
 Revision history for JSAN Form.Element.Resize class
 
+0.04 Mon Aug 13 22:44:43 CEST 2007
+- added 2 new properties to limit the maximum width and/or height when the element is resized
+
 0.03 Tue Feb 27 15:33:25 CET 2007
 - added a hack to solve a problem with Internet Exploder and cloned select elements that
   do not preserve the selected option.

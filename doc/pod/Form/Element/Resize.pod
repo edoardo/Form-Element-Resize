@@ -1,0 +1,144 @@
+=head1 NAME
+
+Form.Element.Resize - Unobtrusive javascript class for make a standard form field resizable with the mouse
+
+=head1 SYNOPSIS
+
+ <!-- XHTML page -->
+ <form action="http://host.domain.tld/cgi-bin/script">
+  <label for="message">Message:</label><br />
+  <textarea id="message" name="message"></textarea>
+ </form>
+
+ // javascript code
+ new Form.Element.Resize({ elementId: 'message' });
+
+=head1 DESCRIPTION
+
+This nice class implement some methods for add a mouse-driven resize feature on form fields such as text inputs, textareas and select controls.
+Clicking and dragging the borders or the corners of the form element will resize it while double clicking inside the element will restore its
+original dimensions (this does not work with select elements in Internet Explorer and Firefox).
+It is also possible to specify the maximum width and height allowed when the element is resized.
+
+Tested under Firefox 2, Internet Explorer 6/7, Opera 9.
+
+=head1 METHODS
+
+=head2 B<new()>
+
+Class constructor, returns a new Form.Element.Resize object.
+
+=head3 Parameters
+
+=over 3
+
+=item B<oProps>
+
+Object literal where must be specified the element id on which activate the resize feature and other optional properties that overwrites the defaults.
+
+Properties are:
+
+=over 3
+
+=item C<elementId>
+
+ID of the element on which enable the resize feature. B<mandatory!>
+
+=item C<resizeType>
+
+Type of resize, shortcuts are auto, horizontal and vertical (default is auto).
+
+- auto: resizable borders and corners are set automatically depending on the form element type.
+  text input and non-multiple select have only the right border draggable;
+  textarea and multple select have the right and bottom borders and the bottom-right corner draggable.
+
+- horizontal: all field types have only the right border draggable.
+
+- vertical: all field types have only the bottom border draggable.
+
+It is also possible to specify each border/corner to activate by passing an object literal with one or more of the following keys:
+
+n, ne, e, se, s, sw, w, nw
+
+All are initially disabled, so for example, to activate only the bottom-right corner the property must be initialized like this:
+
+ new Form.Element.Resize({ elementId: 'message', resizeType: { se: 1 } });
+
+=item C<maxWidth>
+
+Maximum width allowed for the element.
+When this value is reached the horizontal resize stops.
+By default this property is not set, so there is not limit to the resize.
+
+ new Form.Element.Resize({ elementId: 'message', maxWidth: 400 });
+
+=item C<maxHeight>
+
+Maximum height allowed for the element.
+When this value is reached the vertical resize stops.
+By default this property is not set, so there is not limit to the resize.
+
+ new Form.Element.Resize({ elementId: 'message', maxHeight: 350 });
+
+=item C<containerId>
+
+ID of the generated container element, useful for add some CSS rules on it.
+
+=item C<containerClass>
+
+Class of the generated container element, useful for add some CSS rules on it.
+
+=back
+
+=back
+
+=head1 EXAMPLES
+
+ <!-- you can initialize the class within your XHTML page like this -->
+ <form action="http://host.domain.tld/cgi-bin/script">
+  <label for="message">Message:</label><br />
+  <textarea id="message" name="message"></textarea>
+  <script type="text/javascript">new Form.Element.Resize({ elementId: 'message', containerClass: 'resizable' });</script>
+ </form>
+
+
+ // or in a more unobtrusive way put the new in an included javascript file.
+ // be sure to call the new when the page is loaded!
+ // a cross-browser way may be this
+ if( document.addEventListener )
+ {
+     document.addEventListener(
+       'load',
+       function() { new Form.Element.Resize({ elementId: 'message', containerClass: 'resizable' }); },
+       false
+     );
+
+     return true;
+ }
+ else if( document.attachEvent )
+ {
+     return document.attachEvent(
+       'onload',
+       function() { new Form.Element.Resize({ elementId: 'message', containerClass: 'resizable' }); }
+     );
+ }
+
+=head1 SEE ALSO
+
+Official web page at L<http://www.sabadelli.it/edoardo/projects/javascript/form.element.resize>
+
+JSAN L<http://openjsan.org/>
+
+=head1 AUTHOR
+
+Edoardo Sabadelli - L<http://www.sabadelli.it/edoardo>
+
+=head1 COPYRIGHT
+
+Copyright (c) 2007 Edoardo Sabadelli. All rights reserved.
+
+This module is free software; you can redistribute it and/or modify it
+under the terms of the Artistic license.
+
+
+=cut

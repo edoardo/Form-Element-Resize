@@ -1,0 +1,28 @@
+{
+    "resources": {
+        "license": "http://dev.perl.org/licenses/"
+    },
+    "generated_by": "Module::Build version 0.2808",
+    "meta-spec": {
+        "version": 1.2,
+        "url": "http://module-build.sourceforge.net/META-spec-v1.2.html"
+    },
+    "version": 0.04,
+    "name": "Form.Element.Resize",
+    "author": [
+        "Edoardo Sabadelli <http://www.sabadelli.it/edoardo>"
+    ],
+    "license": "perl",
+    "keywords": [
+        "form",
+        "element",
+        "resize"
+    ],
+    "provides": {
+        "Form.Element.Resize": {
+            "version": 0.04,
+            "file": "lib/Form/Element/Resize.js"
+        }
+    },
+    "abstract": "Unobtrusive javascript class for make a standard form field resizable with the mouse"
+}

@@ -4,7 +4,7 @@
 
  <head>
 
-  <title>Form.Element.Resize test page</title>
+  <title>JSAN Form.Element.Resize demo</title>
 
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="author" content="Edoardo Sabadelli - http://www.sabadelli.it/edoardo" />
@@ -42,7 +42,7 @@
 
  <body>
 
-  <h1>Test page for the JSAN Form.Element.Resize library</h1>
+  <h1>Form.Element.Resize demo</h1>
 
   <ol>
    <li>Note the nice visual effects and cursors ;)</li>
@@ -55,6 +55,7 @@
    <label for="text1">Text field:</label><br />
    <input type="text" id="text1" name="text1" /><br />
    <label for="txta1">Whatever:</label><br />
+   <small>(resize is limited to 400 px for the width and 150 px for the height)</small><br />
    <textarea id="txta1" name="whatever"></textarea>
    <br /><br />
    <label for="select1">Rate this js class:</label><br />
@@ -68,7 +69,7 @@
  
   <script type="text/javascript">
     new Form.Element.Resize({ elementId: 'text1' });
-    new Form.Element.Resize({ elementId: 'txta1' });
+    new Form.Element.Resize({ elementId: 'txta1', maxWidth: 400, maxHeight: 150 });
     new Form.Element.Resize({ elementId: 'select1' });
   </script>
 

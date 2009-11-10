@@ -1,6 +1,9 @@
+Changes
+doc/html/Form/Element/Resize.html
+doc/pod/Form/Element/Resize.pod
+doc/text/Form/Element/Resize.txt
 lib/Form/Element/Resize.js
 MANIFEST			This list of files
-Changes
-META.yml
 README
 tests/index.html
+META.json
