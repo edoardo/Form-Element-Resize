@@ -53,9 +53,10 @@
 
   <form action="#">
    <label for="text1">Text field:</label><br />
+   <small>(resize is limited to 100 px for the minimum width)</small><br />
    <input type="text" id="text1" name="text1" /><br />
    <label for="txta1">Whatever:</label><br />
-   <small>(resize is limited to 400 px for the width and 150 px for the height)</small><br />
+   <small>(resize is limited to 400 px for the maximum width and 150 px for the maximum height)</small><br />
    <textarea id="txta1" name="whatever"></textarea>
    <br /><br />
    <label for="select1">Rate this js class:</label><br />
@@ -68,7 +69,7 @@
   </form>
  
   <script type="text/javascript">
-    new Form.Element.Resize({ elementId: 'text1' });
+    new Form.Element.Resize({ elementId: 'text1', minWidth: 100 });
     new Form.Element.Resize({ elementId: 'txta1', maxWidth: 400, maxHeight: 150 });
     new Form.Element.Resize({ elementId: 'select1' });
   </script>

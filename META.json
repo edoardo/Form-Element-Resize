@@ -7,7 +7,7 @@
         "version": 1.2,
         "url": "http://module-build.sourceforge.net/META-spec-v1.2.html"
     },
-    "version": 0.04,
+    "version": 0.05,
     "name": "Form.Element.Resize",
     "author": [
         "Edoardo Sabadelli <http://www.sabadelli.it/edoardo>"
@@ -20,7 +20,7 @@
     ],
     "provides": {
         "Form.Element.Resize": {
-            "version": 0.04,
+            "version": 0.05,
             "file": "lib/Form/Element/Resize.js"
         }
     },

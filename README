@@ -22,8 +22,8 @@ DESCRIPTION
     element will resize it while double clicking inside the element will
     restore its original dimensions (this does not work with select
     elements in Internet Explorer and Firefox). It is also possible to
-    specify the maximum width and height allowed when the element is
-    resized.
+    specify the minimum and maximum width and height allowed when the
+    element is resized.
 
     Tested under Firefox 2, Internet Explorer 6/7, Opera 9.
 
@@ -71,6 +71,20 @@ METHODS
 	bottom-right corner the property must be initialized like this:
 
          new Form.Element.Resize({ elementId: 'message', resizeType: { se: 1 } });
+
+      minWidth
+
+	Minimum width allowed for the element. When this value is reached
+	the horizontal resize stops. By default this property is set to 1.
+
+         new Form.Element.Resize({ elementId: 'message', minWidth: 100 });
+
+      minHeight
+
+	Minimum height allowed for the element. When this value is reached
+	the vertical resize stops. By default this property is set to 1.
+
+         new Form.Element.Resize({ elementId: 'message', minHeight: 50 });
 
       maxWidth
 
